@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .yellow-bg { background-color: #ffc107; }
+        .dark-bg { background-color: #000000; }
+        .img-container { width: 100%; padding-top: 56.25%; position: relative; overflow: hidden; }
+        .img-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+        .menu-item { padding: 1.5rem 0; }
+        .menu-item i { font-size: 2rem; } /* Increased icon size */
+        .footer { padding: 3rem 0; }
+        .vertical-center { display: flex; align-items: center; }
+        .pc-header {
+            aspect-ratio: 16 / 9;
+            background-color: #ffc107;
+        }
+        .pc-header-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+        }
+        .pc-header-image {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align to the left */
+            overflow: hidden;
+        }
+        .pc-header-image img {
+            width: 90%; /* Slightly smaller */
+            height: 90%;
+            object-fit: contain;
+        }
+        @media (max-width: 767px) {
+            .mobile-square { aspect-ratio: 1 / 1; }
+            .mobile-square .img-container { padding-top: 90%; } /* Slightly smaller mobile image */
+            .mobile-text-padding { padding-left: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <!-- PC Header -->
+        <div class="d-none d-md-block pc-header">
+            <div class="row h-100 g-0">
+                <div class="col-md-5 pc-header-content"> <!-- Reduced width -->
+                    <div style="max-width: 100%; word-wrap: break-word;"> <!-- Added for text wrapping -->
+                        <h1>Lorem</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, consequatur!</p>
+                    </div>
+                </div>
+                <div class="col-md-7 pc-header-image"> <!-- Increased width -->
+                    <img src="https://doodleipsum.com/700/outline?i=e8c761b0f2f7dec775b1dac860352cd8" alt="Top image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Header -->
+        <div class="d-md-none">
+            <div class="yellow-bg p-4 mobile-square">
+                <div class="mobile-text-padding">
+                    <h1>Lorem</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, consequatur!</p>
+                </div>
+                <div class="img-container">
+                    <img src="https://doodleipsum.com/700/outline?i=cb611bd4a1ccad1faa4a012dcfd9b498" alt="Top image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu (Icons enlarged) -->
+        <div class="row g-0 dark-bg text-white">
+            <div class="col-4 text-center menu-item">
+                <i class="fas fa-shopping-cart"></i>
+                <p class="mb-0">Lorem, ipsum dolor.</p>
+            </div>
+            <div class="col-4 text-center menu-item">
+                <i class="fas fa-cloud"></i>
+                <p class="mb-0">Lorem, ipsum dolor.</p>
+            </div>
+            <div class="col-4 text-center menu-item">
+                <i class="fas fa-comments"></i>
+                <p class="mb-0">Lorem, ipsum dolor.</p>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="row g-0">
+            <div class="col-12 col-md-6 p-4">
+                <div class="img-container mb-3">
+                    <img src="https://doodleipsum.com/700/outline?i=1862f60997857bee396485d52e2de972" alt="Second image" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 p-4 vertical-center">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rerum quibusdam nisi autem id a magni incidunt assumenda corporis dolores.</p>
+            </div>
+        </div>
+
+        <div class="row g-0">
+            <div class="col-12 col-md-6 order-md-2 p-4">
+                <div class="img-container mb-3">
+                    <img src="https://doodleipsum.com/700/outline?i=6c20955262c0d34c33c9835795b40c9b" alt="Third image" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 p-4 vertical-center">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rerum quibusdam nisi autem id a magni incidunt assumenda corporis dolores.</p>
+            </div>
+        </div>
+
+        <div class="row g-0">
+            <div class="col-12 col-md-6 p-4">
+                <div class="img-container mb-3">
+                    <img src="https://doodleipsum.com/700/outline?i=eacd5c618536b91da299b3f30d1d55a4" alt="Fourth image" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 p-4 vertical-center">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam rerum quibusdam nisi autem id a magni incidunt assumenda corporis dolores.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="row g-0">
+            <div class="col-12 dark-bg text-white footer">
+                <p class="text-center mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, ut?</p>
+                <div class="text-center">
+                    <button class="btn btn-outline-light">Lorem, ipsum.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
